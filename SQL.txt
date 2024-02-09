@@ -1,0 +1,47 @@
+Database - 데이터를 일정한 규칙에 따라 모아 놓은 집합의 모임
+DBMS - 데이터베이스에 접근을 도와주는 프로그램
+SQL - DBMS에서 데이터를 조작하기 위한 언어
+Table - 데이터를 일정한 규칙에 따라 구성한 집합
+Field, Column - 테이블을 구성하는 하나의 속성
+Record, Row - 테이블의 하나의 값
+PK - 레코드를 식별할 수 있는 고유한 속성(기본키)
+FK - 다른 테이블의 레코드를 참조하는 속성(외래키)
+
+DDL - 데이터 정의어(테이블을 만들거나, 삭제, 수정하는 명령어)
+Create TABLE "대분류"(
+	id integer primary key,
+	이름 char(30),
+);
+DROP Table "대분류";
+
+
+DML - 데이터 조작어(데이터 조회/삽입/삭제/수정)
+
+모든 테이블 조회
+SELECT * FROM "대분류";
+
+대분류 테이블에서 id가 3인 것만 조회
+SELECT * FROM "대분류" WHERE id = 3;
+
+대분류 테이블에 6번 아이디로 프로그래밍 언어 삽입
+INSERT INTO "대분류" (
+	id, 이름) VALUES(6, 프로그래밍 언어)
+)
+
+대분류 테이블의 데이터 중 id가 3번인 것을 삭제
+DELETE FROM "대분류" WHERE id = 3;
+
+대분류 테이블의 데이터 중 id가 3번인 것의 이름을 마이크로 변경
+UPDATE "대분류" SET 이름="마이크" WHERE id = 3
+
+
+DCL - 데이터베이스의 권한 설정하는 명령어
+GRANT(권한 제공), REVOKE(권한 해제)
+
+TCL - 하나의 작업단위를 반영하기 위한 명령어(COMMIT(작업 결과 반영), ROLLBACK(COMMIT 전으로 복원)
+INSERT INTO "대분류"(id, 이름) VALUES (6, 프로그래밍 언어)
+COMMIT; -- 적용
+
+
+
+
